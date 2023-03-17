@@ -35,9 +35,9 @@ class ViewController: UIViewController {
         yellowSignalView.alpha = lightIsOff
         greenSignalView.alpha = lightIsOff
         
-        redSignalView.layer.cornerRadius = 50
-        yellowSignalView.layer.cornerRadius = 50
-        greenSignalView.layer.cornerRadius = 50
+        redSignalView.layer.cornerRadius = redSignalView.frame.height / 2
+        yellowSignalView.layer.cornerRadius = yellowSignalView.frame.height / 2
+        greenSignalView.layer.cornerRadius = greenSignalView.frame.height / 2
 
         startButton.layer.cornerRadius = 12
         startButton.setTitle("START", for: .normal)
