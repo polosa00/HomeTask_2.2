@@ -25,24 +25,13 @@ class ViewController: UIViewController {
     private var lightIsOn: CGFloat = 1
     private var lightIsOff:CGFloat = 0.3
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setStartingConfigurationsForViews()
     }
     
-    private func setStartingConfigurationsForViews() {
-        redSignalView.alpha = lightIsOff
-        yellowSignalView.alpha = lightIsOff
-        greenSignalView.alpha = lightIsOff
-        
-        redSignalView.layer.cornerRadius = redSignalView.frame.height / 2
-        yellowSignalView.layer.cornerRadius = yellowSignalView.frame.height / 2
-        greenSignalView.layer.cornerRadius = greenSignalView.frame.height / 2
-
-        startButton.layer.cornerRadius = 12
-        startButton.setTitle("START", for: .normal)
-    }
-
+    
     @IBAction func startedSignalAction(_ sender: Any) {
         startButton.setTitle("NEXT", for: .normal)
         
@@ -63,3 +52,18 @@ class ViewController: UIViewController {
     }
 }
 
+
+extension ViewController {
+    private func setStartingConfigurationsForViews() {
+        redSignalView.alpha = lightIsOff
+        yellowSignalView.alpha = lightIsOff
+        greenSignalView.alpha = lightIsOff
+        
+        redSignalView.layer.cornerRadius = redSignalView.frame.height / 2
+        yellowSignalView.layer.cornerRadius = yellowSignalView.frame.height / 2
+        greenSignalView.layer.cornerRadius = greenSignalView.frame.height / 2
+
+        startButton.layer.cornerRadius = 12
+        startButton.setTitle("START", for: .normal)
+    }
+}
