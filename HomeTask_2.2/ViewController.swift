@@ -32,7 +32,7 @@ class ViewController: UIViewController {
     }
     
     
-    @IBAction func startedSignalAction(_ sender: Any) {
+    @IBAction func startedSignalAction() {
         startButton.setTitle("NEXT", for: .normal)
         
         switch currentColor {
