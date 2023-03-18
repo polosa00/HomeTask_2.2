@@ -56,7 +56,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <action selector="startedSignalAction" destination="z7d-1C-WqD" eventType="touchUpInside" id="W1k-jj-LVo"/>
+                                            <action selector="colorLightsButtonDidTapped" destination="z7d-1C-WqD" eventType="touchUpInside" id="W1k-jj-LVo"/>
                                         </connections>
                                     </button>
                                 </subviews>

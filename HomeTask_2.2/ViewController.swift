@@ -32,23 +32,9 @@ class ViewController: UIViewController {
     }
     
     
-    @IBAction func startedSignalAction() {
+    @IBAction func colorLightsButtonDidTapped() {
         startButton.setTitle("NEXT", for: .normal)
-        
-        switch currentColor {
-        case .red:
-            redSignalView.alpha = lightIsOn
-            greenSignalView.alpha = lightIsOff
-            currentColor = .yellow
-        case .yellow:
-            yellowSignalView.alpha = lightIsOn
-            redSignalView.alpha = lightIsOff
-            currentColor = .green
-        case .green:
-            greenSignalView.alpha = lightIsOn
-            yellowSignalView.alpha = lightIsOff
-            currentColor = .red
-        }
+        setLogicSettingsForColorLightsButton()
     }
 }
 
@@ -65,5 +51,22 @@ extension ViewController {
 
         startButton.layer.cornerRadius = 12
         startButton.setTitle("START", for: .normal)
+    }
+    
+    private func setLogicSettingsForColorLightsButton() {
+        switch currentColor {
+        case .red:
+            redSignalView.alpha = lightIsOn
+            greenSignalView.alpha = lightIsOff
+            currentColor = .yellow
+        case .yellow:
+            yellowSignalView.alpha = lightIsOn
+            redSignalView.alpha = lightIsOff
+            currentColor = .green
+        case .green:
+            greenSignalView.alpha = lightIsOn
+            yellowSignalView.alpha = lightIsOff
+            currentColor = .red
+        }
     }
 }
