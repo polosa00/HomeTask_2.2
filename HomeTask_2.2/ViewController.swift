@@ -33,7 +33,6 @@ class ViewController: UIViewController {
     
     
     @IBAction func colorLightsButtonDidTapped() {
-        startButton.setTitle("NEXT", for: .normal)
         setLogicSettingsForColorLightsButton()
     }
 }
@@ -54,6 +53,7 @@ extension ViewController {
     }
     
     private func setLogicSettingsForColorLightsButton() {
+        startButton.setTitle("NEXT", for: .normal)
         switch currentColor {
         case .red:
             redSignalView.alpha = lightIsOn
