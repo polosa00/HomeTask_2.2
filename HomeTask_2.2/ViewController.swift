@@ -25,40 +25,24 @@ class ViewController: UIViewController {
     private var lightIsOn: CGFloat = 1
     private var lightIsOff:CGFloat = 0.3
     
+    override func viewDidLayoutSubviews() {
+        setFrameForViews()
+
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setStartingConfigurationsForViews()
+        setAlphaForViews()
     }
     
     
-    @IBAction func colorLightsButtonDidTapped() {
-        setLogicSettingsForColorLightsButton()
-    }
-}
-
-
-extension ViewController {
-    private func setStartingConfigurationsForViews() {
-        redSignalView.alpha = lightIsOff
-        yellowSignalView.alpha = lightIsOff
-        greenSignalView.alpha = lightIsOff
-        
-        redSignalView.layer.cornerRadius = redSignalView.frame.height / 2
-        yellowSignalView.layer.cornerRadius = yellowSignalView.frame.height / 2
-        greenSignalView.layer.cornerRadius = greenSignalView.frame.height / 2
-
-        startButton.layer.cornerRadius = 12
-        startButton.setTitle("START", for: .normal)
-    }
-    
-    private func setLogicSettingsForColorLightsButton() {
-        startButton.setTitle("NEXT", for: .normal)
+    @IBAction func buttonDidTapped() {
         switch currentColor {
         case .red:
             redSignalView.alpha = lightIsOn
             greenSignalView.alpha = lightIsOff
             currentColor = .yellow
+            startButton.setTitle("NEXT", for: .normal)
         case .yellow:
             yellowSignalView.alpha = lightIsOn
             redSignalView.alpha = lightIsOff
@@ -68,5 +52,22 @@ extension ViewController {
             yellowSignalView.alpha = lightIsOff
             currentColor = .red
         }
+    }
+}
+
+
+extension ViewController {
+    
+    private func setFrameForViews() {
+        redSignalView.layer.cornerRadius = redSignalView.frame.height / 2
+        yellowSignalView.layer.cornerRadius = yellowSignalView.frame.height / 2
+        greenSignalView.layer.cornerRadius = greenSignalView.frame.height / 2
+        startButton.layer.cornerRadius = 12
+    }
+   
+    private func setAlphaForViews() {
+        redSignalView.alpha = lightIsOff
+        yellowSignalView.alpha = lightIsOff
+        greenSignalView.alpha = lightIsOff
     }
 }
